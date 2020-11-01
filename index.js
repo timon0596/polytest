@@ -1,4 +1,4 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from './node_modules1/@polymer/polymer/polymer-element.js';
 
 class IconToggle extends PolymerElement {
   static get template() {
@@ -120,7 +120,12 @@ class IconToggle extends PolymerElement {
     super.ready();
     const sr = $(this)[0].shadowRoot;
     console.log($(sr).find('.test'));
-    $(sr).find('.test').myChart({ ...this.newConfig(), diapason: { full: JSON.parse(this.isFullDiapason) } });
+    $(sr).find('.test').myChart({
+      ...this.newConfig(),
+      diapason: {
+        full: JSON.parse(this.isFullDiapason),
+      },
+    });
   }
 
   newConfig(num = 1234) {
